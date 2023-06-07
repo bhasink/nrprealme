@@ -71,7 +71,7 @@ export default function Photo() {
 
         <div className='camdivst' ref={ref}>
         <Camera ref={camera} aspectRatio={"cover"} numberOfCamerasCallback={setNumberOfCameras} />
-        <img src={"/arbigs.png"} alt='filter' style={{position:"relative"}} />
+        <img src={"/arbigsnws.png"} alt='filter' style={{position:"relative", zIndex:8}} />
 
         </div>
 
@@ -98,7 +98,7 @@ export default function Photo() {
         )}
 
 
-        <button className='btn btn-register file-upload iconcm bcmp'   
+{  /* <button className='btn btn-register file-upload iconcm bcmp'   
         
         disabled={numberOfCameras <= 1}
         onClick={() => {
@@ -110,8 +110,8 @@ export default function Photo() {
         
         >
 
-<img src='./flipcmct.png'/>
-        </button>
+        <img src='./flipcmct.png'/>
+      </button>  */}
        
        {/**<button className='btn btn-register file-upload' onClick={() => setImage(camera.current.takePhoto())}>Take photo</button> */} 
         

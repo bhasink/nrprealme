@@ -5,10 +5,7 @@ export default function Home() {
   return (
     <>
       <section className="memes-sec">
-        <div className="head-con">
-          <h1>NARZO POSTER MAKER</h1>
-          <p className="campaign-text">BE THE FACE OF NARZO</p>
-        </div>
+       
         <div className="panel-cont">
           <div className="justify-content-center mb-3 maindiv">
             <div className="leftsimg">

@@ -20,10 +20,7 @@ export default function Home() {
   return (
     <>
       <section className="memes-sec">
-        <div className="head-con">
-          <h1>NARZO POSTER MAKER</h1>
-          <p className="campaign-text">BE THE FACE OF NARZO</p>
-        </div>
+       
         <div className="panel-cont">
           <div className=" justify-content-center mb-3 maindiv">
             <div className="leftsimg">
@@ -53,16 +50,22 @@ export default function Home() {
              
 
               <button className="btn btn-register file-upload iconcm" onClick={downloadImage}>
-                <img src="./download-solid.png" />
+               <i class="fal fa-download"></i>
               </button>
 
               <a className="btn btn-register file-upload iconcm socl" href={`https://www.facebook.com/sharer/sharer.php?u=${image}&quote=Social share of realme ....`} target="_blank">
-                <img src="./facebook-f.png" />
+                <i class="fab fa-facebook-f"></i>
               </a>
 
               <a className="btn btn-register file-upload iconcm" href={`http://twitter.com/share?text=realme new mobile launch&url=${image}&hashtags=realmeLaunch,realmeLaunch2,realmeLaunch33`}>
-                <img src="./twitter.png" />
+                <i class="fab fa-whatsapp"></i>
               </a>
+			  
+			  <a className="btn btn-register file-upload iconcm" href={`http://twitter.com/share?text=realme new mobile launch&url=${image}&hashtags=realmeLaunch,realmeLaunch2,realmeLaunch33`}>
+                <i class="fab fa-instagram"></i>
+              </a>
+			  
+			  
             </div>
           </div>
         </div>
