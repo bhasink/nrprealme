@@ -98,11 +98,29 @@ export default function Photo() {
         )}
 
 
-       
+        <button className='btn btn-register file-upload iconcm bcmp'   
+        
+        disabled={numberOfCameras <= 1}
+        onClick={() => {
+          if (camera.current) {
+            const result = camera.current.switchCamera();
+            console.log(result);
+          }
+        }}
+        
+        >
+
+<img src='./flipcmct.png'/>
+        </button>
        
        {/**<button className='btn btn-register file-upload' onClick={() => setImage(camera.current.takePhoto())}>Take photo</button> */} 
         
-       
+        <button 
+        hidden={numberOfCameras <= 1}
+        onClick={() => {
+          camera.current.switchCamera();
+        }}
+      />
       </div>
 
       
