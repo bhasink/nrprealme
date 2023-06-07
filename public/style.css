@@ -810,7 +810,7 @@ img.genouts {
 
 .center-ctayl {
   display: flex;
-  max-width: 102px;
+  max-width: fit-content;
   margin: auto;
 }
 
@@ -819,9 +819,9 @@ img.genouts {
 }
 
 .iconcm {
-  border-radius: 100%;
-  width: 40px;
-  height: 40px;
+ 
+  width: 42px;
+  height: 34px;
   margin: 0;
   padding: 0 9px;
 }
@@ -838,16 +838,38 @@ button.iconcm img {
   max-width: max-content;
 }
 
-.center-ctayl.newcts  .iconcm img {
-  width: 17px;
-}
 
-.center-ctayl.newcts .iconcm.socl img {
-  width: 12px;
-}
 
 .center-ctayl.newcts .btn-register.file-upload {
   margin: 5px 5px;
+  line-height: 36px;
+  font-family: sans-serif;
+  font-weight: 600;
+ 
+}
+
+.center-ctayl.newcts .iconcm{
+  width: 44px;
+  height: 44px;
+}
+
+.btn-register.file-upload{
+  font-family: sans-serif;
+  font-weight: 600;
+  box-shadow: #e3d9d9 0px 3px 3px 0px;
+}
+
+.bigdvcs {
+  display: none;
+}
+
+.center-ctayl{
+  margin: 10px auto;
+}
+
+.rmfds .camdivst video.newvdfrms {
+  width: 100%;
+  position: absolute;
 }
 
 @media screen and (max-width: 600px){
@@ -862,6 +884,40 @@ button.iconcm img {
   .rmfds .camdivst {
     width: 100%;
     max-width: inherit;
+    height: 90vh;
 }
 
+.center-ctayl{
+  margin: 10px auto;
 }
+
+.rmfds .camdivst video.newvdfrms {
+  height: auto;
+}
+
+
+}
+
+
+@media screen and (max-width: 413px) and (min-width: 400px){
+  .bigdvcs {
+    display: block;
+}
+
+.smalldvcs {
+  display: none;
+}
+
+.bgsetsm {
+  height: 89vh;
+  position: relative;
+  background-size: cover !important;
+  width: 100%;
+  background-position: top !important;
+  background-repeat: no-repeat !important;
+}
+
+
+
+}
+

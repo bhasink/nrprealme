@@ -47,15 +47,15 @@ export default function Home() {
               </Link>
 
               <button className="btn btn-register file-upload iconcm" onClick={downloadImage}>
-                <img src="./download-solid.svg" />
+                <img src="./download-solid.png" />
               </button>
 
               <a className="btn btn-register file-upload iconcm socl" href={`https://www.facebook.com/sharer/sharer.php?u=${image}&quote=Social share of realme ....`} target="_blank">
-                <img src="./facebook-f.svg" />
+                <img src="./facebook-f.png" />
               </a>
 
               <a className="btn btn-register file-upload iconcm" href={`http://twitter.com/share?text=realme new mobile launch&url=${image}&hashtags=realmeLaunch,realmeLaunch2,realmeLaunch33`}>
-                <img src="./twitter.svg" />
+                <img src="./twitter.png" />
               </a>
             </div>
           </div>

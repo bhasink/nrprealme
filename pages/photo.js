@@ -82,7 +82,7 @@ export default function Photo() {
 
        
        <div className='center-ctayl'>
-        <button className='btn btn-register file-upload iconcm'  style={{ marginBottom: '10px' }} onClick={getImage}>
+        <button className='btn btn-register file-upload iconcm'  onClick={getImage}>
         <img src='./frontcmon.png'/>
         </button>
 
@@ -98,7 +98,7 @@ export default function Photo() {
         )}
 
 
-        <button className='btn btn-register file-upload iconcm bcmp'  style={{ marginBottom: '10px' }} 
+        <button className='btn btn-register file-upload iconcm bcmp'   
         
         disabled={numberOfCameras <= 1}
         onClick={() => {
