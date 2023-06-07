@@ -873,10 +873,7 @@ button.iconcm img {
 }
 
 @media screen and (max-width: 600px){
-  .rmfds .camdivst  video#video{
-      height: 91vh;
-  }
-
+  
   video#video{
     max-width: 100%;
   }
@@ -884,7 +881,6 @@ button.iconcm img {
   .rmfds .camdivst {
     width: 100%;
     max-width: inherit;
-    height: 90vh;
 }
 
 .center-ctayl{
