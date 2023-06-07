@@ -15,7 +15,7 @@ export default function Home() {
               <img src="/cb.jpg" alt />
             </div>
             <div className="flx-cont">
-              <div className="bt-blkk">
+              <div className="">
 
 <Link href="/photo" className='btn btn-register file-upload'>
 Click Photo
