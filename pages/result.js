@@ -46,6 +46,12 @@ export default function Home() {
                 Copy link
               </Link>
 
+             
+            </div>
+			
+			<div className="center-ctayl newcts">
+             
+
               <button className="btn btn-register file-upload iconcm" onClick={downloadImage}>
                 <img src="./download-solid.png" />
               </button>
