@@ -115,12 +115,7 @@ export default function Photo() {
        
        {/**<button className='btn btn-register file-upload' onClick={() => setImage(camera.current.takePhoto())}>Take photo</button> */} 
         
-        <button 
-        hidden={numberOfCameras <= 1}
-        onClick={() => {
-          camera.current.switchCamera();
-        }}
-      />
+       
       </div>
 
       
