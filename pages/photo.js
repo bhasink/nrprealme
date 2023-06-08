@@ -105,6 +105,8 @@ export default function Photo() {
           idealResolution={{ width: 401, height: 652 }}
           // onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
           isFullscreen={false}
+          isImageMirror = {false}
+
         />
           <img
             src={'/arbigsnws.png'}
