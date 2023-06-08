@@ -113,7 +113,7 @@ export default function Home() {
                 <i class="fab fa-facebook-f"></i>
               </a>
 
-              <a className="btn btn-register file-upload iconcm" href={`whatsapp://send?text=${image}`} data-action="share/whatsapp/share">
+              <a className="btn btn-register file-upload iconcm" href={'whatsapp://send?text='+encodeURIComponent(image)} data-action="share/whatsapp/share">
                 <i class="fab fa-whatsapp"></i>
               </a>
 			  
