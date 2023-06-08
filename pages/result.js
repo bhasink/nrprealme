@@ -57,8 +57,20 @@ export default function Home() {
   
 
 
-  const downloadImage = () => {
-    saveAs(image, 'realme.jpg')
+  const downloadImage = async () => {
+    // saveAs(image, 'realme.png')
+    const imageUrl = "https://phpstack-709751-3121510.cloudwaysapps.com/chat_img/64814476715c2.png";
+
+    await fetch(imageUrl)
+    // .then((response) => response.blob())
+    // .then((blob) => {
+    //   let url = window.URL.createObjectURL(blob);
+    //   let a = document.createElement('a');
+    //   a.href = url;
+    //   a.download = 'realme.png';
+    //   a.click();
+    // });
+     
   }
 
   return (
@@ -93,19 +105,19 @@ export default function Home() {
 			<div className="center-ctayl newcts">
              
 
-              <button className="btn btn-register file-upload iconcm" onClick={downloadImage}>
+              {/* <button className="btn btn-register file-upload iconcm" onClick={downloadImage}>
                <i class="fal fa-download"></i>
-              </button>
+              </button> */}
 
               <a className="btn btn-register file-upload iconcm socl" href={`https://www.facebook.com/sharer/sharer.php?u=${image}&quote=Social share of realme ....`} target="_blank">
                 <i class="fab fa-facebook-f"></i>
               </a>
 
-              <a className="btn btn-register file-upload iconcm" href={`whatsapp://send?text=${image}`} data-action="share/whatsapp/share">
+              <a className="btn btn-register file-upload iconcm" href={'whatsapp://send?text='+encodeURIComponent(image)} data-action="share/whatsapp/share">
                 <i class="fab fa-whatsapp"></i>
               </a>
 			  
-			  <a className="btn btn-register file-upload iconcm" href={`http://twitter.com/share?text=realme new mobile launch&url=${image}&hashtags=realmeLaunch,realmeLaunch2,realmeLaunch33`}>
+			  <a className="btn btn-register file-upload iconcm" href={`http://twitter.com/share?text=realme&url=${image}&hashtags=realmeLaunch,realmeLaunch,realmeLaunch`}>
                 <i class="fab fa-twitter"></i>
               </a>
 			  
