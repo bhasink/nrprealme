@@ -1,9 +1,11 @@
 "use client"; 
-import { useState, useRef, createRef} from 'react'
+import { useState, useRef, createRef, useEffect} from 'react'
 import {Camera} from "react-camera-pro";
-import { useScreenshot } from 'use-react-screenshot'
+import { useScreenshot, createFileName } from 'use-react-screenshot'
 import axios from "axios"
 import Link from 'next/link'
+import Router , {useRouter}  from 'next/router';
+import { CirclesWithBar } from  'react-loader-spinner'
 
 export default function Photo() {
 
@@ -11,16 +13,57 @@ export default function Photo() {
   const [image, setImage] = useState(null);
   const [numberOfCameras, setNumberOfCameras] = useState(0);
   const ref = createRef(null)
-  const [imaget, takeScreenshot] = useScreenshot()
-  const getImage = async(e) => takeScreenshot(ref.current)
+  const [imaget, takeScreenshot] = useScreenshot({
+    quality: 0.8,
+});
+  const router = useRouter()
+
+  useEffect(() => {
    
+    if(imaget != null){
+      saveImg(imaget)
+    }
+  
+  }, [imaget])
+
+
+  const download = async(image, { name = "img", extension = "jpg" } = {}) => {
+    const a = document.createElement("a");
+    a.href = image;
+    // a.download = createFileName(extension, name);
+    let file = createFileName(extension, name);
+    // saveImg(image)
+    // a.click();
+
+    // let formData = new FormData()
+    // formData.append('image', image)
+
+
+    // try {
+    //   const { data } = await axios.post('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', formData)
+     
+    //   window.localStorage.setItem("imaget", data.data.img);
+
+    //   router.push('/result')
+
+     
+    //   console.log(data)
+    // } catch (err) {
+    //   console.log(err)
+    // }
+
+
+  };
+
+  const getImage = () => takeScreenshot(ref.current);
    
+  const saveImg = async(im) => {
     // takeScreenshot(ref.current)
 
     // window.localStorage.setItem("imaget", imaget);
 
-    // let formData = new FormData()
-    // formData.append('image', imaget)
+    let formData = new FormData()
+    formData.append('image', imaget)
 
   //   fetch('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', {
   //     method: 'post',
@@ -30,18 +73,20 @@ export default function Photo() {
   //  .then(data => window.localStorage.setItem("imaget", data.data.img));
 
 
-    // try {
-    //   const { data } = await axios.post('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', formData)
+    try {
+      const { data } = await axios.post('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', formData)
      
-    //   window.localStorage.setItem("imaget", data.data.img);
+      window.localStorage.setItem("imaget", data.data.img);
 
-     
-    //   console.log(data)
-    // } catch (err) {
-    //   console.log(err)
-    // }
+      router.push('/result')
 
-  // }
+
+      console.log(data)
+    } catch (err) {
+      console.log(err)
+    }
+
+  }
 
   if(imaget){
     window.localStorage.setItem("imaget", imaget);
@@ -70,7 +115,7 @@ export default function Photo() {
 
 
         <div className='camdivst' ref={ref}>
-        <Camera ref={camera} aspectRatio={"cover"} numberOfCamerasCallback={setNumberOfCameras} />
+        <Camera ref={camera} facingMode={"environment"} aspectRatio={"cover"} numberOfCamerasCallback={setNumberOfCameras} />
         <img src={"/arbigsnws.png"} alt='filter' style={{position:"relative", zIndex:8}} />
 
         </div>
@@ -82,19 +127,34 @@ export default function Photo() {
 
        
        <div className='center-ctayl'>
+
+       {!imaget && (
         <button className='btn btn-register file-upload iconcm'  onClick={getImage}>
         <i class="fas fa-camera"></i>
         </button>
 
-       
+)}
+
        {imaget && (
-        <Link 
-          href={{
-            pathname: '/result',
-          }}
-          className='btn btn-register file-upload'>
-          Result
-        </Link>
+        // <Link 
+        //   href={{
+        //     pathname: '/result',
+        //   }}
+        //   className='btn btn-register file-upload'>
+        //   Result
+        // </Link>
+        <CirclesWithBar
+  height="50"
+  width="50"
+  color="#ffc915"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+  outerCircleColor=""
+  innerCircleColor=""
+  barColor=""
+  ariaLabel='circles-with-bar-loading'
+/>
         )}
 
 
