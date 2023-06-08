@@ -94,7 +94,7 @@ export default function Photo() {
 
 
         <div className='camdivst' ref={ref}>
-        <Camera ref={camera} facingMode={"environment"} aspectRatio={"cover"} numberOfCamerasCallback={setNumberOfCameras} />
+        <Camera ref={camera} facingMode={"environment"}  numberOfCamerasCallback={setNumberOfCameras} />
         <img src={"/arbigsnws.png"} alt='filter' style={{position:"relative", zIndex:8}} />
 
         </div>
