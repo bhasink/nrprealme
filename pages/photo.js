@@ -1,9 +1,10 @@
 "use client"; 
-import { useState, useRef, createRef} from 'react'
+import { useState, useRef, createRef, useEffect} from 'react'
 import {Camera} from "react-camera-pro";
-import { useScreenshot } from 'use-react-screenshot'
+import { useScreenshot, createFileName } from 'use-react-screenshot'
 import axios from "axios"
 import Link from 'next/link'
+import Router , {useRouter}  from 'next/router';
 
 export default function Photo() {
 
@@ -12,15 +13,52 @@ export default function Photo() {
   const [numberOfCameras, setNumberOfCameras] = useState(0);
   const ref = createRef(null)
   const [imaget, takeScreenshot] = useScreenshot()
-  const getImage = async(e) => takeScreenshot(ref.current)
+  const router = useRouter()
+
+  // useEffect(() => {
    
+  //   saveImg(imaget)
+  
+  // }, [imaget])
+
+
+  const download = async(image, { name = "img", extension = "jpg" } = {}) => {
+    const a = document.createElement("a");
+    a.href = image;
+    // a.download = createFileName(extension, name);
+    let file = createFileName(extension, name);
+    // saveImg(image)
+    // a.click();
+
+    let formData = new FormData()
+    formData.append('image', image)
+
+
+    try {
+      const { data } = await axios.post('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', formData)
+     
+      window.localStorage.setItem("imaget", data.data.img);
+
+      router.push('/result')
+
+     
+      console.log(data)
+    } catch (err) {
+      console.log(err)
+    }
+
+
+  };
+
+  const getImage = () => takeScreenshot(ref.current).then(download);
    
+  const saveImg = async(im) => {
     // takeScreenshot(ref.current)
 
     // window.localStorage.setItem("imaget", imaget);
 
-    // let formData = new FormData()
-    // formData.append('image', imaget)
+    let formData = new FormData()
+    formData.append('image', "sd")
 
   //   fetch('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', {
   //     method: 'post',
@@ -30,18 +68,18 @@ export default function Photo() {
   //  .then(data => window.localStorage.setItem("imaget", data.data.img));
 
 
-    // try {
-    //   const { data } = await axios.post('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', formData)
+    try {
+      const { data } = await axios.post('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', formData)
      
-    //   window.localStorage.setItem("imaget", data.data.img);
+      window.localStorage.setItem("imaget", data.data.img);
 
      
-    //   console.log(data)
-    // } catch (err) {
-    //   console.log(err)
-    // }
+      console.log(data)
+    } catch (err) {
+      console.log(err)
+    }
 
-  // }
+  }
 
   if(imaget){
     window.localStorage.setItem("imaget", imaget);
@@ -87,7 +125,7 @@ export default function Photo() {
         </button>
 
        
-       {imaget && (
+       {/* {imaget && (
         <Link 
           href={{
             pathname: '/result',
@@ -95,7 +133,7 @@ export default function Photo() {
           className='btn btn-register file-upload'>
           Result
         </Link>
-        )}
+        )} */}
 
 
 {  /* <button className='btn btn-register file-upload iconcm bcmp'   
