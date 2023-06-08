@@ -140,8 +140,16 @@ export default function Home() {
                 <i class="fab fa-whatsapp"></i>
               </a>
 			  
-			  <a className="btn btn-register file-upload iconcm" href={`http://twitter.com/share?text=realme&url=${image}&hashtags=realmeLaunch,realme11proseries5g`}>
+			  {/* <a className="btn btn-register file-upload iconcm" href={`http://twitter.com/share?text=realme&url=${image}&hashtags=realmeLaunch,realme11proseries5g`}>
                 <i class="fab fa-twitter"></i>
+              </a> */}
+
+<a className="btn btn-register file-upload iconcm" href={`https://twitter.com/share?text=realme&url=${image}&hashtags=realmeLaunch,realme11proseries5g`}>
+                <i class="fab fa-twitter"></i>
+              </a>
+
+              <a className="btn btn-register file-upload iconcm" href={`https://twitter.com/intent/tweet?text=realme11proseries5g&url=${image}&hashtags=realmeLaunch,realme11proseries5g`}>
+                <i class="fab fa-twitter"></i>p
               </a>
 			  
 			  
