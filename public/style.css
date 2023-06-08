@@ -793,7 +793,7 @@
 
 .react-html5-camera-photo{
     position: absolute  !important;
-    top: 0;
+    top: 155px;
     left: 0;
     z-index: 9;
 }
@@ -802,6 +802,7 @@
 
 .rmfds .camdivst video {
   object-fit: cover;
+  height: 481px;
 }
 
 #inner-circle, #outer-circle {
