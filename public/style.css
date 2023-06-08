@@ -785,11 +785,17 @@
 
 
 .topframes {
-  position: absolute;
+  position: relative;
   top: 0;
-  z-index: 999;
-  left: 0;
 }
+
+.rmfds .camdivst video{
+  width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 
 .rmfds .camdivst video {
   width: 100%;
@@ -882,7 +888,6 @@ button.iconcm img {
   width: 100%;
   position: absolute;
 }
-
 
 
 .center-ctayl.newcts .iconcm i {
