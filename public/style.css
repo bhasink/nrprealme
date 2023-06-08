@@ -787,11 +787,13 @@
 .topframes {
   position: relative;
   top: 0;
+  z-index: 999;
+  left: 0;
 }
 
-.rmfds .camdivst video{
+.react-html5-camera-photo{
   width: 100%;
-    position: absolute;
+    position: absolute  !important;
     top: 0;
     left: 0;
 }
