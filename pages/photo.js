@@ -12,7 +12,10 @@ export default function Photo() {
   const [image, setImage] = useState(null);
   const [numberOfCameras, setNumberOfCameras] = useState(0);
   const ref = createRef(null)
-  const [imaget, takeScreenshot] = useScreenshot()
+  const [imaget, takeScreenshot] = useScreenshot({
+    type: "image/jpg",
+    quality: 1.0,
+});
   const router = useRouter()
 
   useEffect(() => {
