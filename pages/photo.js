@@ -68,7 +68,7 @@ export default function Photo() {
   }
 
   if(imaget){
-    window.localStorage.setItem("imaget", imaget);
+    window.localStorage.setItem("imagett", imaget);
   }
 
 
