@@ -801,6 +801,9 @@
 
 
 
+.rmfds .camdivst video {
+height: 800px;
+}
 
 #inner-circle, #outer-circle {
   display: none;
