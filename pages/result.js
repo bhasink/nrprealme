@@ -105,9 +105,9 @@ export default function Home() {
 			<div className="center-ctayl newcts">
              
 
-              <button className="btn btn-register file-upload iconcm" onClick={downloadImage}>
+              {/* <button className="btn btn-register file-upload iconcm" onClick={downloadImage}>
                <i class="fal fa-download"></i>
-              </button>
+              </button> */}
 
               <a className="btn btn-register file-upload iconcm socl" href={`https://www.facebook.com/sharer/sharer.php?u=${image}&quote=Social share of realme ....`} target="_blank">
                 <i class="fab fa-facebook-f"></i>

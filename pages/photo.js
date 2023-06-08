@@ -27,35 +27,14 @@ export default function Photo() {
   }, [imaget])
 
 
-  const download = async(image, { name = "img", extension = "jpg" } = {}) => {
+  const download = async(image, { name = "realme", extension = "jpg" } = {}) => {
     const a = document.createElement("a");
     a.href = image;
-    // a.download = createFileName(extension, name);
-    let file = createFileName(extension, name);
-    // saveImg(image)
-    // a.click();
-
-    // let formData = new FormData()
-    // formData.append('image', image)
-
-
-    // try {
-    //   const { data } = await axios.post('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', formData)
-     
-    //   window.localStorage.setItem("imaget", data.data.img);
-
-    //   router.push('/result')
-
-     
-    //   console.log(data)
-    // } catch (err) {
-    //   console.log(err)
-    // }
-
-
+    a.download = createFileName(extension, name);
+    a.click();
   };
 
-  const getImage = () => takeScreenshot(ref.current);
+  const getImage = () => takeScreenshot(ref.current).then(download);
    
   const saveImg = async(im) => {
     // takeScreenshot(ref.current)
