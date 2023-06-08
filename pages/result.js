@@ -57,8 +57,20 @@ export default function Home() {
   
 
 
-  const downloadImage = () => {
-    saveAs(image, 'realme.jpg')
+  const downloadImage = async () => {
+    // saveAs(image, 'realme.png')
+    const imageUrl = "https://phpstack-709751-3121510.cloudwaysapps.com/chat_img/64814476715c2.png";
+
+    await fetch(imageUrl)
+    // .then((response) => response.blob())
+    // .then((blob) => {
+    //   let url = window.URL.createObjectURL(blob);
+    //   let a = document.createElement('a');
+    //   a.href = url;
+    //   a.download = 'realme.png';
+    //   a.click();
+    // });
+     
   }
 
   return (
