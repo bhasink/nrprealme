@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { saveAs } from 'file-saver'
 import axios from "axios"
+import { useScreenshot, createFileName } from 'use-react-screenshot'
 
 export default function Home() {
   const [image, setImage] = useState('')
@@ -11,15 +12,28 @@ export default function Home() {
 
   useEffect(() => {
     let value
+    let valuet
     // Get the value from local storage if it exists
     value = localStorage.getItem('imaget') || ''
     setImage(value)
+
+    valuet = localStorage.getItem('imagett') || ''
+    setImageURL(valuet)
+
 
     // if(value != ''){
     //   getImagee(value)
     // }
   
   }, [])
+
+  const download = async(image, { name = "realme", extension = "jpg" } = {}) => {
+    const a = document.createElement("a");
+    a.href = image;
+    a.download = createFileName(extension, name);
+    a.click();
+  };
+
   
   const getImagee = async(value) => { 
     
@@ -58,10 +72,19 @@ export default function Home() {
 
 
   const downloadImage = async () => {
-    // saveAs(image, 'realme.png')
-    const imageUrl = "https://phpstack-709751-3121510.cloudwaysapps.com/chat_img/64814476715c2.png";
 
-    await fetch(imageUrl)
+
+  
+
+    const a = document.createElement("a");
+    a.href = imageURL;
+    a.download = createFileName("png", "realme");
+    a.click();
+
+    // saveAs(image, 'realme.png')
+    // const imageUrl = "https://phpstack-709751-3121510.cloudwaysapps.com/chat_img/64814476715c2.png";
+
+    // await fetch(imageUrl)
     // .then((response) => response.blob())
     // .then((blob) => {
     //   let url = window.URL.createObjectURL(blob);
@@ -105,9 +128,9 @@ export default function Home() {
 			<div className="center-ctayl newcts">
              
 
-              {/* <button className="btn btn-register file-upload iconcm" onClick={downloadImage}>
+              <button className="btn btn-register file-upload iconcm" onClick={downloadImage}>
                <i class="fal fa-download"></i>
-              </button> */}
+              </button>
 
               <a className="btn btn-register file-upload iconcm socl" href={`https://www.facebook.com/sharer/sharer.php?u=${image}&quote=Social share of realme ....`} target="_blank">
                 <i class="fab fa-facebook-f"></i>

@@ -14,7 +14,7 @@ export default function Photo() {
   const [numberOfCameras, setNumberOfCameras] = useState(0);
   const ref = createRef(null)
   const [imaget, takeScreenshot] = useScreenshot({
-    quality: 0.7,
+    quality: 1.0,
 });
   const router = useRouter()
 
@@ -34,7 +34,7 @@ export default function Photo() {
     a.click();
   };
 
-  const getImage = () => takeScreenshot(ref.current).then(download);
+  const getImage = () => takeScreenshot(ref.current);
    
   const saveImg = async(im) => {
     // takeScreenshot(ref.current)
@@ -68,7 +68,7 @@ export default function Photo() {
   }
 
   if(imaget){
-    window.localStorage.setItem("imaget", imaget);
+    window.localStorage.setItem("imagett", imaget);
   }
 
 
