@@ -800,6 +800,10 @@
 
 
 
+.rmfds .camdivst video {
+  object-fit: cover;
+}
+
 #inner-circle, #outer-circle {
   display: none;
 }
