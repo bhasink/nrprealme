@@ -795,6 +795,10 @@
   width: 100%;
 }
 
+#inner-circle, #outer-circle {
+  display: none;
+}
+
 img.genouts {
   width: 100%;
 }
