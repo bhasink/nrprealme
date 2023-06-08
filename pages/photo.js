@@ -6,7 +6,7 @@ import axios from 'axios'
 import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
 import { CirclesWithBar } from 'react-loader-spinner'
-import Camera from 'react-html5-camera-photo'
+import Camera, { FACING_MODES, IMAGE_TYPES } from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css'
 
 export default function Photo() {
@@ -106,7 +106,7 @@ export default function Photo() {
           // onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
           isFullscreen={false}
           isImageMirror = {false}
-
+          idealFacingMode = {FACING_MODES.ENVIRONMENT}
         />
           <img
             className='topframes'
