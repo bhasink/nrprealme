@@ -15,11 +15,13 @@ export default function Photo() {
   const [imaget, takeScreenshot] = useScreenshot()
   const router = useRouter()
 
-  // useEffect(() => {
+  useEffect(() => {
    
-  //   saveImg(imaget)
+    if(imaget != null){
+      saveImg(imaget)
+    }
   
-  // }, [imaget])
+  }, [imaget])
 
 
   const download = async(image, { name = "img", extension = "jpg" } = {}) => {
@@ -30,27 +32,27 @@ export default function Photo() {
     // saveImg(image)
     // a.click();
 
-    let formData = new FormData()
-    formData.append('image', image)
+    // let formData = new FormData()
+    // formData.append('image', image)
 
 
-    try {
-      const { data } = await axios.post('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', formData)
+    // try {
+    //   const { data } = await axios.post('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', formData)
      
-      window.localStorage.setItem("imaget", data.data.img);
+    //   window.localStorage.setItem("imaget", data.data.img);
 
-      router.push('/result')
+    //   router.push('/result')
 
      
-      console.log(data)
-    } catch (err) {
-      console.log(err)
-    }
+    //   console.log(data)
+    // } catch (err) {
+    //   console.log(err)
+    // }
 
 
   };
 
-  const getImage = () => takeScreenshot(ref.current).then(download);
+  const getImage = () => takeScreenshot(ref.current);
    
   const saveImg = async(im) => {
     // takeScreenshot(ref.current)
@@ -58,7 +60,7 @@ export default function Photo() {
     // window.localStorage.setItem("imaget", imaget);
 
     let formData = new FormData()
-    formData.append('image', "sd")
+    formData.append('image', imaget)
 
   //   fetch('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', {
   //     method: 'post',
@@ -73,7 +75,9 @@ export default function Photo() {
      
       window.localStorage.setItem("imaget", data.data.img);
 
-     
+      router.push('/result')
+
+
       console.log(data)
     } catch (err) {
       console.log(err)
