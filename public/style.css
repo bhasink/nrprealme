@@ -792,7 +792,6 @@
 }
 
 .react-html5-camera-photo{
-  width: 100%;
     position: absolute  !important;
     top: 0;
     left: 0;
@@ -800,10 +799,6 @@
 }
 
 
-
-.rmfds .camdivst video {
-height: 800px;
-}
 
 #inner-circle, #outer-circle {
   display: none;
