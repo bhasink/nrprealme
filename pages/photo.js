@@ -34,7 +34,7 @@ export default function Photo() {
     a.click();
   };
 
-  const getImage = () => takeScreenshot(ref.current).then(download);
+  const getImage = () => takeScreenshot(ref.current);
    
   const saveImg = async(im) => {
     // takeScreenshot(ref.current)
