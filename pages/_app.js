@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
     <>
 
 
-<Script strategy="afterInteractive">
+{/* <Script strategy="afterInteractive">
        { 
        `
        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
        
      
 `}
-</Script>
+</Script> */}
 
 
         <Head>
