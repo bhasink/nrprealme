@@ -801,7 +801,6 @@ img.genouts {
   margin: auto;
   position: relative;
   overflow: hidden;
-  max-height: 650px;
 }
 
 .rmfds {
@@ -887,6 +886,10 @@ button.iconcm img {
 .center-ctayl.newcts .iconcm i {
     font-size: 24px;
     line-height: 45px;
+}
+
+.center-ctayl .iconcm .fa-camera {
+  font-size: 25px;
 }
 
 @media screen and (max-width: 600px){

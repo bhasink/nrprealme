@@ -83,7 +83,7 @@ export default function Photo() {
        
        <div className='center-ctayl'>
         <button className='btn btn-register file-upload iconcm'  onClick={getImage}>
-        <img src='./frontcmon.png'/>
+        <i class="fas fa-camera"></i>
         </button>
 
        
