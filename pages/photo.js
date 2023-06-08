@@ -102,7 +102,7 @@ export default function Photo() {
           {/* <Camera ref={camera} facingMode={"environment"}  numberOfCamerasCallback={setNumberOfCameras} /> */}
          
           <Camera
-          idealResolution={{ width: 400, height: 650 }}
+          idealResolution={{  }}
           // onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
           isFullscreen={true}
           isImageMirror = {false}
