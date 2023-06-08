@@ -112,7 +112,7 @@ export default function Photo() {
             className='topframes'
             src={'/arbigsnws.png'}
             alt="filter"
-            style={{  zIndex: 8 }}
+            
           />
         </div>
 
