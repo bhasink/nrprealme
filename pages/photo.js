@@ -104,7 +104,7 @@ export default function Photo() {
           <Camera
           idealResolution={{ width: 400, height: 650 }}
           // onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
-          isFullscreen={false}
+          isFullscreen={true}
           isImageMirror = {false}
           idealFacingMode = {FACING_MODES.ENVIRONMENT}
         />
