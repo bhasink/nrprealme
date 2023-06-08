@@ -802,7 +802,7 @@
 
 .rmfds .camdivst video {
   object-fit: cover;
-  height: 481px;
+  height: 100%;
 }
 
 #inner-circle, #outer-circle {
