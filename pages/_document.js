@@ -1,7 +1,7 @@
-import Document, { Html, Main, NextScript } from 'next/document'
+import Document, { Html, Main, Head, NextScript } from 'next/document'
 import { useState,useEffect } from "react"
 
-import Head from "next/head";
+
 
 import Script from 'next/script'
 
