@@ -784,7 +784,16 @@
 }
 
 
+.topframes {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  left: 0;
+}
 
+.rmfds .camdivst video {
+  width: 100%;
+}
 
 img.genouts {
   width: 100%;

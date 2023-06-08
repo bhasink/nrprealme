@@ -102,16 +102,17 @@ export default function Photo() {
           {/* <Camera ref={camera} facingMode={"environment"}  numberOfCamerasCallback={setNumberOfCameras} /> */}
          
           <Camera
-          idealResolution={{ width: 401, height: 652 }}
+          idealResolution={{ width: 400, height: 650 }}
           // onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
           isFullscreen={false}
           isImageMirror = {false}
 
         />
           <img
+            className='topframes'
             src={'/arbigsnws.png'}
             alt="filter"
-            style={{ position: 'relative', zIndex: 8 }}
+            style={{  zIndex: 8 }}
           />
         </div>
 
