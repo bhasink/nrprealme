@@ -5,6 +5,7 @@ import { useScreenshot, createFileName } from 'use-react-screenshot'
 import axios from "axios"
 import Link from 'next/link'
 import Router , {useRouter}  from 'next/router';
+import { CirclesWithBar } from  'react-loader-spinner'
 
 export default function Photo() {
 
@@ -126,20 +127,35 @@ export default function Photo() {
 
        
        <div className='center-ctayl'>
+
+       {!imaget && (
         <button className='btn btn-register file-upload iconcm'  onClick={getImage}>
         <img src='./frontcmon.png'/>
         </button>
 
-       
-       {/* {imaget && (
-        <Link 
-          href={{
-            pathname: '/result',
-          }}
-          className='btn btn-register file-upload'>
-          Result
-        </Link>
-        )} */}
+)}
+
+       {imaget && (
+        // <Link 
+        //   href={{
+        //     pathname: '/result',
+        //   }}
+        //   className='btn btn-register file-upload'>
+        //   Result
+        // </Link>
+        <CirclesWithBar
+  height="50"
+  width="50"
+  color="#ffc915"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+  outerCircleColor=""
+  innerCircleColor=""
+  barColor=""
+  ariaLabel='circles-with-bar-loading'
+/>
+        )}
 
 
 {  /* <button className='btn btn-register file-upload iconcm bcmp'   
