@@ -188,15 +188,17 @@ export default function Home() {
 			  )}
 
 
-{image =='' && (
 
-<>
-  <p>Generating the Social Links, please wait!</p>
-</>
-			  )}
 
 			  
             </div>
+
+            {image =='' && (
+
+<div style={{textAlign:"center"}}>
+  <p>Generating the Social Links, please wait!</p>
+</div>
+			  )}
           </div>
         </div>
       </section>
