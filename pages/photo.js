@@ -48,8 +48,8 @@ export default function Photo() {
 
     // window.localStorage.setItem("imaget", imaget);
 
-    let formData = new FormData()
-    formData.append('image', imaget)
+    // let formData = new FormData()
+    // formData.append('image', imaget)
 
     //   fetch('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', {
     //     method: 'post',
@@ -58,20 +58,23 @@ export default function Photo() {
     //  }).then(response => response.json())
     //  .then(data => window.localStorage.setItem("imaget", data.data.img));
 
-    try {
-      const { data } = await axios.post(
-        'https://phpstack-709751-3121510.cloudwaysapps.com/api/realme',
-        formData,
-      )
+    // try {
+    //   const { data } = await axios.post(
+    //     'https://phpstack-709751-3121510.cloudwaysapps.com/api/realme',
+    //     formData,
+    //   )
 
-      window.localStorage.setItem('imaget', data.data.img)
+    //   window.localStorage.setItem('imaget', data.data.img)
 
-      router.push('/result')
+    //   router.push('/result')
 
-      console.log(data)
-    } catch (err) {
-      console.log(err)
-    }
+    //   console.log(data)
+    // } catch (err) {
+    //   console.log(err)
+    // }
+
+    router.push('/result')
+
   }
 
   if (imaget) {

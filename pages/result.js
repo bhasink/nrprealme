@@ -14,8 +14,8 @@ export default function Home() {
     let value
     let valuet
     // Get the value from local storage if it exists
-    value = localStorage.getItem('imaget') || ''
-    setImage(value)
+    // value = localStorage.getItem('imaget') || ''
+    // setImage(value)
 
     valuet = localStorage.getItem('imagett') || ''
     setImageURL(valuet)
@@ -27,12 +27,44 @@ export default function Home() {
   
   }, [])
 
-  const download = async(image, { name = "realme", extension = "jpg" } = {}) => {
-    const a = document.createElement("a");
-    a.href = image;
-    a.download = createFileName(extension, name);
-    a.click();
-  };
+
+  useEffect(() => {
+    if (imageURL != null) {
+      saveImg(imageURL)
+    }
+  }, [imageURL])
+
+  const saveImg = async (im) => {
+    // takeScreenshot(ref.current)
+
+    // window.localStorage.setItem("imaget", imaget);
+
+    let formData = new FormData()
+    formData.append('image', imageURL)
+
+    //   fetch('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', {
+    //     method: 'post',
+    //     headers: {'Content-Type':'application/json'},
+    //     body: formData
+    //  }).then(response => response.json())
+    //  .then(data => window.localStorage.setItem("imaget", data.data.img));
+
+    try {
+      const { data } = await axios.post(
+        'https://phpstack-709751-3121510.cloudwaysapps.com/api/realme',
+        formData,
+      )
+
+      // window.localStorage.setItem('imaget', data.data.img)
+      setImage(data.data.img)
+
+      // router.push('/result')
+
+      console.log(data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   
   const getImagee = async(value) => { 
@@ -103,7 +135,7 @@ export default function Home() {
         <div className="panel-cont">
           <div className=" justify-content-center mb-3 maindiv">
             <div className="leftsimg">
-              <img src={image} alt />
+              <img src={imageURL} alt />
             </div>
 
             <div className="center-ctayl newcts">
