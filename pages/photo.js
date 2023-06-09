@@ -110,7 +110,7 @@ export default function Photo() {
         />
           <img
             className='topframes'
-            src={'/arbigsnws.png'}
+            src={'/arincrease.png'}
             alt="filter"
             
           />
