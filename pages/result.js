@@ -143,6 +143,10 @@ export default function Home() {
                 Click Again
               </Link>
 
+              {image !='' && (
+
+<>
+
               <Link
                 href="#"
                 onClick={() => {
@@ -153,7 +157,9 @@ export default function Home() {
               >
                 Copy link
               </Link>
-
+              </>
+			  )}
+			  
              
             </div>
 			
@@ -164,6 +170,9 @@ export default function Home() {
                <i class="fal fa-download"></i>
               </button>
 
+              {image !='' && (
+
+<>
               <a className="btn btn-register file-upload iconcm socl" href={`https://www.facebook.com/sharer/sharer.php?u=${image}&quote=Social share of realme ....`} target="_blank">
                 <i class="fab fa-facebook-f"></i>
               </a>
@@ -171,17 +180,21 @@ export default function Home() {
               <a className="btn btn-register file-upload iconcm" href={'whatsapp://send?text='+encodeURIComponent(image)} data-action="share/whatsapp/share">
                 <i class="fab fa-whatsapp"></i>
               </a>
-			  
-			  {/* <a className="btn btn-register file-upload iconcm" href={`http://twitter.com/share?text=realme&url=${image}&hashtags=realmeLaunch,realme11proseries5g`}>
-                <i class="fab fa-twitter"></i>
-              </a> */}
-
-
 
               <a className="btn btn-register file-upload iconcm" href={`https://twitter.com/intent/tweet?text=realme11proseries5g&url=${image}&hashtags=realmeLaunch,realme11proseries5g`}>
                 <i class="fab fa-twitter"></i>
               </a>
-			  
+              </>
+			  )}
+
+
+{image =='' && (
+
+<>
+  <p>Generating the Social Links, please wait!</p>
+</>
+			  )}
+
 			  
             </div>
           </div>
