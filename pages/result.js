@@ -29,10 +29,15 @@ export default function Home() {
 
 
   useEffect(() => {
-    if (imageURL != null) {
-      saveImg(imageURL)
+
+    let kb
+    kb = localStorage.getItem('imagett') || ''
+
+
+    if (kb != null) {
+      saveImg(kb)
     }
-  }, [imageURL])
+  }, [])
 
   const saveImg = async (im) => {
     // takeScreenshot(ref.current)
@@ -40,7 +45,7 @@ export default function Home() {
     // window.localStorage.setItem("imaget", imaget);
 
     let formData = new FormData()
-    formData.append('image', imageURL)
+    formData.append('image', im)
 
     //   fetch('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', {
     //     method: 'post',
